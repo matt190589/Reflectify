@@ -2,6 +2,7 @@ import React from "react";
 import Scoreboard from "./Scoreboard/Scoreboard";
 import StatsCard from "./StatsCard";
 import { useState, useEffect } from "react";
+import "./Summary.css";
 
 function Summary() {
   //a streak feature using count number (3+)
@@ -26,14 +27,16 @@ function Summary() {
   }, []);
 
   return (
-    <div>
-      <h1>Summary</h1>
-      <h1>YOU ARE AWESOME!</h1>
-      <h1>Work hard to earn your BADGES!</h1>
-      {users.length > 0
-        ? users.map((user, index) => <StatsCard userData={user} key={index} />)
-        : ""}
-      {/* <Scoreboard /> */}
+    <div className="summary">
+      <h1>Reflections Summary</h1>
+      <div className="cards-container">
+        {users.length > 0
+          ? users.map((user, index) => (
+              <StatsCard userData={user} key={index} />
+            ))
+          : ""}
+        {/* <Scoreboard /> */}
+      </div>
     </div>
   );
 }

@@ -15,7 +15,7 @@ function Summary() {
     (async () => {
       let userData;
       try {
-        const response = await fetch("https://randomuser.me/api/?results=10");
+        const response = await fetch("https://randomuser.me/api/?results=6");
         userData = await response.json();
       } catch (error) {
         console.log(error);
